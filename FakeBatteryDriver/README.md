@@ -10,8 +10,17 @@ native menu bar item can all follow it.
 
 ## Build
 
+MacKernelSDK is **not included** in this repository (too large, separate project and license).
+Download it yourself into this folder, either with git:
+
 ```
 git clone https://github.com/acidanthera/MacKernelSDK
+```
+
+or with **Code → Download ZIP** on the [MacKernelSDK page](https://github.com/acidanthera/MacKernelSDK),
+renaming the unzipped folder to `MacKernelSDK`. Then:
+
+```
 bash build_kext.sh
 ```
 
