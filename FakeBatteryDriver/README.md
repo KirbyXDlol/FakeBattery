@@ -24,8 +24,6 @@ renaming the unzipped folder to `MacKernelSDK`. Then:
 bash build_kext.sh
 ```
 
-If the compile or link step fails, send me the exact error and I will fix it.
-
 ## Install (OpenCore)
 
 1. Copy `FakeBatteryDriver.kext` to `EFI/OC/Kexts/`.
