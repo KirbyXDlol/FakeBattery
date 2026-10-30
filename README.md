@@ -90,13 +90,28 @@ Apple Silicon, so this part is for hackintoshes only.
 Requirements: Xcode or the Command Line Tools, and
 [Acidanthera's MacKernelSDK](https://github.com/acidanthera/MacKernelSDK).
 
+**MacKernelSDK is not included in this repository.** It is a large, separate project with its own
+license, so you need to download it yourself and put it in the `FakeBatteryDriver` folder.
+Either way, the folder must end up named `MacKernelSDK`:
+
+- **With git:**
+  ```bash
+  cd FakeBattery/FakeBatteryDriver
+  git clone https://github.com/acidanthera/MacKernelSDK
+  ```
+- **Without git:** open the [MacKernelSDK page](https://github.com/acidanthera/MacKernelSDK),
+  choose **Code → Download ZIP**, unzip it, rename the folder to `MacKernelSDK` (remove any
+  `-master` suffix) and move it into `FakeBatteryDriver`.
+
+Then build:
+
 ```bash
 cd FakeBattery/FakeBatteryDriver
-git clone https://github.com/acidanthera/MacKernelSDK
 bash build_kext.sh
 ```
 
-This produces `FakeBatteryDriver.kext`. To keep the SDK elsewhere, set `MACKERNELSDK=/path/to/MacKernelSDK`.
+This produces `FakeBatteryDriver.kext`. To keep the SDK somewhere else, set
+`MACKERNELSDK=/path/to/MacKernelSDK` when running the script.
 
 ### Install with OpenCore
 
@@ -168,4 +183,7 @@ app sends its saved value.
 
 ## License
 
-Choose a license before publishing (MIT is a common choice) and add a `LICENSE` file.
+This project is released under the [MIT License](LICENSE).
+
+MacKernelSDK is **not** part of this project and is not covered by this license. It is a separate
+project by Acidanthera, distributed under its own license, which you download yourself to build the driver.
